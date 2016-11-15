@@ -43,7 +43,7 @@ function fe_theme_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	add_image_size( 'fe_theme-featured-image', 640, 9999 );
-	add_image_size( 'fe_theme-hero', 1280, 1000, true );
+	add_image_size( 'fe_theme-hero', 1280, 550, true );
 	add_image_size( 'fe_theme-thumbnail-avatar', 100, 100, true );
 
 	// This theme uses wp_nav_menu() in one location.
@@ -102,7 +102,7 @@ add_action( 'after_setup_theme', 'fe_theme_setup' );
  * @global int $content_width
  */
 function fe_theme_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'fe_theme_content_width', 1024 );
+	$GLOBALS['content_width'] = apply_filters( 'fe_theme_content_width', 1920 );
 }
 add_action( 'after_setup_theme', 'fe_theme_content_width', 0 );
 
@@ -172,3 +172,4 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
