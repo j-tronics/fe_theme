@@ -43,7 +43,7 @@ function fe_theme_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	add_image_size( 'fe_theme-featured-image', 640, 9999 );
-	add_image_size( 'fe_theme-hero', 1280, 550, true );
+	add_image_size( 'fe_theme-hero', 2560, 900, true );
 	add_image_size( 'fe_theme-thumbnail-avatar', 100, 100, true );
 
 	// This theme uses wp_nav_menu() in one location.
