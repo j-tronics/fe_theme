@@ -1,4 +1,4 @@
-=== Floral Events Theme ===
+=== fe_theme ===
 
 Contributors: Nicholas Romero - ncrmro
 Tags:
@@ -37,7 +37,7 @@ As mentioned above fe_theme requires the WP-SCSS plugin or it will not be able t
 
 == Changelog ==
 
-= 0.1 - 11/7/2016 =
+= 0.0.1 - 11/7/2016 =
 * Initial release
 
 == Credits ==
