@@ -78,7 +78,6 @@
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
-  display: block;
 }
 
 .menu-toggle:before {
@@ -98,4 +97,12 @@
 
 .sub-menu {
   background: $color__nav_background_color;
+}
+
+
+
+.main-navigation.toggled {
+  ul {
+    display: none;
+  }
 }

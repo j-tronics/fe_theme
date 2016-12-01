@@ -570,10 +570,6 @@ table {
     text-decoration: none; }
 
 /* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-  display: block; }
-
 .menu-toggle:before {
   content: "\2630";
   display: inline-block;
@@ -587,6 +583,9 @@ table {
     display: inline-block; } }
 .sub-menu {
   background: #23282d; }
+
+.main-navigation.toggled ul {
+  display: none; }
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
