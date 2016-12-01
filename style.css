@@ -535,7 +535,7 @@ table {
   vertical-align: middle;
   float: left;
   width: 100%;
-  background-color: #fff; }
+  background-color: #23282d; }
   .main-navigation ul {
     display: inline-block;
     vertical-align: middle;
@@ -586,7 +586,7 @@ table {
   .main-navigation ul {
     display: inline-block; } }
 .sub-menu {
-  background: #fff; }
+  background: #23282d; }
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
@@ -618,9 +618,9 @@ table {
 # Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue; }
+  color: white; }
   a:visited {
-    color: purple; }
+    color: white; }
   a:hover, a:focus, a:active {
     color: midnightblue; }
   a:focus {
@@ -647,7 +647,7 @@ body {
   box-sizing: inherit; }
 
 body {
-  background: #ccd8d0;
+  background: white;
   /* Fallback for when there is no custom background color defined. */ }
 
 .content-area {
@@ -711,14 +711,14 @@ body {
 ## Front Page
 --------------------------------------------------------------*/
 div.tiled-gallery.type-rectangular {
-  background-color: black;
+  background-color: white;
   padding-top: 40px;
   padding-bottom: 40px; }
 
 div.fe_theme-hero {
   padding-bottom: 0;
   line-height: 0;
-  background-color: black; }
+  background-color: white; }
 
 #primary {
   margin-top: 0%;
@@ -845,6 +845,6 @@ object {
 --------------------------------------------------------------*/
 .custom-logo {
   max-width: 150px;
-  padding-top: 55px; }
+  padding-top: 15px; }
 
 /*# sourceMappingURL=style.css.map */
