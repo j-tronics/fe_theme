@@ -12,7 +12,6 @@ if ('posts' == get_option('show_on_front')) : get_template_part('index'); else :
                 the_content();
 
             endwhile; ?>
-            <?php get_template_part('components/features/testimonials/testimonials'); ?>
         </main>
     </div>
     <?php get_footer(); ?>
