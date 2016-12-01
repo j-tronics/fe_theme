@@ -456,37 +456,6 @@ textarea {
 /*--------------------------------------------------------------
 # Buttons
 --------------------------------------------------------------*/
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  border: 1px solid;
-  border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
-  background: #e6e6e6;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.8);
-  font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 1;
-  padding: .6em 1em .4em;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
-  button:hover,
-  input[type="button"]:hover,
-  input[type="reset"]:hover,
-  input[type="submit"]:hover {
-    border-color: #ccc #bbb #aaa;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02); }
-  button:active, button:focus,
-  input[type="button"]:active,
-  input[type="button"]:focus,
-  input[type="reset"]:active,
-  input[type="reset"]:focus,
-  input[type="submit"]:active,
-  input[type="submit"]:focus {
-    border-color: #aaa #bbb #bbb;
-    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15); }
-
 /*--------------------------------------------------------------
 # Formattings
 --------------------------------------------------------------*/
@@ -546,7 +515,7 @@ table {
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
       float: left;
       position: absolute;
-      top: 1.5em;
+      top: 44px;
       left: -999em;
       z-index: 99999; }
       .main-navigation ul ul ul {
@@ -570,6 +539,10 @@ table {
     text-decoration: none; }
 
 /* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+  display: block; }
+
 .menu-toggle:before {
   content: "\2630";
   display: inline-block;
@@ -581,11 +554,20 @@ table {
 
   .main-navigation ul {
     display: inline-block; } }
+@media screen and (max-width: 37.5em) {
+  .menu-toggle {
+    display: inline-block; }
+
+  .main-navigation ul {
+    display: none; }
+
+  .main-navigation li {
+    float: none; } }
 .sub-menu {
   background: #23282d; }
 
-.main-navigation.toggled ul {
-  display: none; }
+button.menu-toggle {
+  color: white; }
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
@@ -706,14 +688,14 @@ body {
   clear: both;
   margin: 0 0 1.5em; }
 
+article {
+  width: 90%;
+  position: relative;
+  margin: 0 auto !important; }
+
 /*--------------------------------------------------------------
 ## Front Page
 --------------------------------------------------------------*/
-div.tiled-gallery.type-rectangular {
-  background-color: white;
-  padding-top: 40px;
-  padding-bottom: 40px; }
-
 div.fe_theme-hero {
   padding-bottom: 0;
   line-height: 0;
@@ -722,6 +704,13 @@ div.fe_theme-hero {
 #primary {
   margin-top: 0%;
   padding: 0%; }
+
+.front-page-gallery {
+  display: flex;
+  flex-wrap: wrap; }
+  .front-page-gallery img {
+    max-width: 480px;
+    max-height: 718px; }
 
 /*--------------------------------------------------------------
 ## Contact Form
@@ -838,6 +827,12 @@ object {
 
 .gallery-caption {
   display: block; }
+
+div.tiled-gallery.type-rectangular {
+  background-color: white; }
+
+.tiled-gallery {
+  overflow: visible !important; }
 
 /*--------------------------------------------------------------
 ## Top logo

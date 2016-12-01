@@ -44,3 +44,11 @@
 .gallery-caption {
 	display: block;
 }
+
+div.tiled-gallery.type-rectangular {
+	background-color: $color__front_page_header_background;
+}
+
+.tiled-gallery {
+	overflow: visible!important;
+}
