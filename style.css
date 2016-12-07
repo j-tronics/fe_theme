@@ -482,6 +482,11 @@ form#message_form {
     column-count: 3;
     column-gap: 0px; }
 
+@media screen and (max-width: 81.25em) {
+  div#innerForm div#leftForm {
+    max-width: 100% !important; }
+  div#innerForm div#rightForm {
+    max-width: 100% !important; } }
 /*--------------------------------------------------------------
 # Buttons
 --------------------------------------------------------------*/
@@ -659,6 +664,17 @@ body {
 body {
   background: white;
   /* Fallback for when there is no custom background color defined. */ }
+
+.full_height_wrapper {
+  min-height: 100%;
+  position: relative; }
+
+.site-footer {
+  position: absolute;
+  bottom: 32px;
+  width: 100%;
+  height: 45px;
+  /* Height of the footer */ }
 
 .content-area {
   float: left;

@@ -15,9 +15,11 @@
 <footer id="colophon" class="site-footer" role="contentinfo">
     <?php get_template_part('components/footer/site', 'info'); ?>
 </footer>
+</div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" ></script>
-<script src="wp-content/themes/fe_theme/assets/js/expand-top-menu.js" ></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="wp-content/themes/fe_theme/assets/js/expand-top-menu.js"></script>
+<script src="wp-content/themes/fe_theme/assets/js/contact_form_submission.js"></script>
 
 <?php wp_footer(); ?>
 

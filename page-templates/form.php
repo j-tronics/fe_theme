@@ -16,33 +16,98 @@ get_header(); ?>
             <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
         </header>
         <div class="entry-content">
-            <?php while (have_posts()) : the_post();
-                the_content();
-            endwhile; // end of the loop. ?>
+            <div id="center-form">
+                <form id="message_form" name="message_form" method="POST">
+                    <div id="innerForm">
 
-            <form name="message_form" method="POST" onsubmit="return form_validation()" action="<?php include( get_template_directory() . '/contact-form.php'); ?>">
-                Your Name:
-                    <input type="text" name="message_name"/>
-                <br/>
-                <br/>
-                Your Email:
-                    <input type="text" name="message_email"/>
-                <br/>
-                <br/>
-                Your Message:
-                    <input type="text" name="message_text"/>
-                <br/>
-                <br/>
-                Whats 2 + 2:
-                    <input type="text" id="message_human" name="message_human"/>
-                <br/>
-                <br/>
-                <input type="submit" value="Submit"/>
-                <br/>
-                <br/>
-            </form>
+
+                        <div id="leftForm">
+                            <label for="message_name">Name: <span>*</span>
+                                <input type="text" name="message_name"/>
+                            </label>
+                            <br>
+
+                            <label for="message_email">Email: <span>*</span>
+                                <input type="text" name="message_email">
+                            </label>
+                            <br>
+
+
+                            <label for="message_email">Phone Number: <span>*</span>
+                                <input type="text" name="message_email">
+                            </label>
+                            <br>
+
+                            <label for="message_email">How did you here about us?: <span>*</span>
+                                <input type="text" name="message_email">
+                            </label>
+                            Whats 2 + 2:
+                            <input type="text" id="message_human" name="message_human"/>
+                            <br/>
+                            <br/>
+                        </div>
+
+
+                        <br>
+                        <div id="rightForm">
+
+                            <label for="message_email">Event Date: <span>*</span>
+                                <input type="text" name="message_email">
+                            </label>
+                            <br>
+
+
+                            <label for="message_email">Event('s) Location: <span>*</span>
+                                <input type="text" name="message_email">
+                            </label>
+
+                            <br>
+
+                            <br>
+                            <label for="message_text">Message: <span>*</span>
+                                <textarea type="text" name="message_text"></textarea>
+                            </label>
+
+                            <ul id="radio_budget_input">
+                                <li>
+                                    <input type="radio" name="radio_budget_input" id="r1" value="$1000"><label for="r1">Less
+                                        than $1000</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="radio_budget_input" id="r2" value="$1000 - $1500"><label
+                                        for="r2">$1000 - $1500</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="radio_budget_input" id="r3" value="$2000 - $3000"><label
+                                        for="r3">$2000 - $3000</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="radio_budget_input" id="r4" value="$3000 - $4000"><label
+                                        for="r4">$3000 - $4000</label>
+
+                                </li>
+                                <li>
+                                    <input type="radio" name="radio_budget_input" id="r5" value="$4000 - $5000"><label
+                                        for="r5">$4000 - $5000</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="radio_budget_input" id="r6" value="$5000 - $7500"><label
+                                        for="r6">$5000 - $7500</label>
+
+                                </li>
+                                <li>
+                                    <input type="radio" name="radio_budget_input" id="r7" value="More than $7500"><label
+                                        for="r7">More than $7500</label>
+                                </li>
+                            </ul>
+                            <input type="submit" value="Submit"/>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+
         </div>
-
 
 
         <footer class="entry-footer">
@@ -50,8 +115,8 @@ get_header(); ?>
             edit_post_link(
                 sprintf(
                 /* translators: %s: Name of current post */
-                    esc_html__( 'Edit %s', 'fe_theme' ),
-                    the_title( '<span class="screen-reader-text">"', '"</span>', false )
+                    esc_html__('Edit %s', 'fe_theme'),
+                    the_title('<span class="screen-reader-text">"', '"</span>', false)
                 ),
                 '<span class="edit-link">',
                 '</span>'
@@ -59,26 +124,7 @@ get_header(); ?>
             ?>
         </footer>
     </article><!-- #post-## -->
+    
 
-    <script type="text/javascript">
-        function form_validation() {
-            /* Check the Customer Name for blank submission*/
-            var message_name = document.forms["message_form"]["message_name"].value;
-
-            if (message_name == "" || message_name == null) {
-                alert("Name field must be filled.");
-                return false;
-            }
-
-            /* Check the Customer Email for invalid format */
-            var message_email = document.forms["message_form"]["message_email"].value;
-            var at_position = message_email.indexOf("@");
-            var dot_position = message_email.lastIndexOf(".");
-            if (at_position < 1 || dot_position < at_position + 2 || dot_position + 2 >= message_email.length) {
-                alert("Given email address is not valid.");
-                return false;
-            }
-        }
-    </script>
 
 <?php get_footer(); ?>

@@ -19,6 +19,18 @@ body {
 	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
 }
 
+.full_height_wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+.site-footer {
+  position:absolute;
+  bottom:32px;
+  width:100%;
+  height:45px;   /* Height of the footer */
+}
+
 @import "content-sidebar";
 // @import "sidebar-content";
 

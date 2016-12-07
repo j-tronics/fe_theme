@@ -24,6 +24,7 @@
 
 <body <?php body_class(); ?>>
         <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'fe_theme'); ?></a>
+        <div class="full_height_wrapper">
 
         <header id="masthead" class="site-header" role="banner">
 

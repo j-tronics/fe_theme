@@ -14,17 +14,17 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: $color__text-input;
-	border: 1px solid $color__border-input;
-	border-radius: 3px;
+  color: $color__text-input;
+  border: 1px solid $color__border-input;
+  border-radius: 3px;
 
-	&:focus {
-		color: $color__text-input-focus;
-	}
+  &:focus {
+    color: $color__text-input-focus;
+  }
 }
 
 select {
-	border: 1px solid $color__border-input;
+  border: 1px solid $color__border-input;
 }
 
 input[type="text"],
@@ -42,10 +42,61 @@ input[type="time"],
 input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"] {
-	padding: 3px;
+  padding: 3px;
+  margin: 5px;
+  width: 100%;
 }
 
 textarea {
-	padding-left: 3px;
-	width: 100%;
+  padding-left: 3px;
+  width: 100%;
+}
+
+form#message_form {
+  padding-left: 10%;
+  padding-right: 10%;
+  div#innerForm {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    div#leftForm {
+      max-width: 50%;
+    }
+    div#rightForm {
+      width: 100%;
+      max-width: 50%
+    }
+    div {
+      padding-left: 1%;
+      padding-right: 1%;
+    }
+  }
+  ul#radio_budget_input {
+    list-style: none;
+    margin: 0;
+    padding-left: 0px;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 0px;
+    -moz-column-count: 3;
+    -moz-column-gap: 0px;
+    column-count: 3;
+    column-gap: 0px;
+
+  }
+}
+
+//Medium Screen
+@media screen and (max-width: 81.25em) {
+  div#innerForm {
+    div#leftForm {
+      max-width: 100% !important;
+    }
+    div#rightForm {
+      max-width: 100% !important;
+    }
+  }
+}
+
+#center-form {
 }
