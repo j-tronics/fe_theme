@@ -6,8 +6,6 @@
  */
 ?>
 
-<?php if ( has_post_thumbnail() ) : ?>
-	<div class="fe_theme-hero">
-		<?php the_post_thumbnail( 'fe_theme-hero' ); ?>
-	</div>
-<?php endif; ?>
+<div class="fe_theme-hero">
+    <img src="wp-content/themes/fe_theme/assets/images/front-page/header.jpg">
+</div>
