@@ -654,7 +654,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  min-height: 100%; }
+  min-height: 100vh; }
 
 *,
 *:before,
@@ -665,8 +665,6 @@ body {
 body {
   position: relative;
   margin: 0;
-  padding-bottom: 6rem;
-  min-height: 100%;
   background: white;
   /* Fallback for when there is no custom background color defined. */ }
 
@@ -676,9 +674,6 @@ body {
   width: 100%;
   height: 45px;
   /* Height of the footer */ }
-
-.site-content {
-  min-height: 600px; }
 
 .content-area {
   float: left;
@@ -803,6 +798,44 @@ div.fe_theme-hero {
   float: left;
   margin-right: 5px; }
 
+div.ceremonies_page {
+  padding-top: 40px;
+  padding-left: 5%;
+  padding-right: 5%; }
+  div.ceremonies_page img {
+    max-width: 33%;
+    width: auto;
+    height: auto;
+    max-height: 400px; }
+
+@media screen and (max-width: 81.25em) {
+  div.ceremonies_page img {
+    max-height: 600px; } }
+#gallery_page_container {
+  /* Prevent vertical gaps */
+  line-height: 0;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 0px;
+  -moz-column-count: 3;
+  -moz-column-gap: 0px;
+  column-count: 3;
+  column-gap: 0px; }
+
+div.gallery_page_tile img {
+  width: 100% !important;
+  height: auto !important;
+  padding: 2px; }
+
+@media (max-width: 800px) {
+  #gallery_page_container {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2; } }
+@media (max-width: 400px) {
+  #gallery_page_container {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1; } }
 /*--------------------------------------------------------------
 # Comments
 --------------------------------------------------------------*/
