@@ -24,21 +24,15 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="inner-body">
-    <div id="outer-wrap-centered" class="site">
         <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'fe_theme'); ?></a>
 
-        <div id="full-height-wrappper">
         <header id="masthead" class="site-header" role="banner">
 
 
             <?php fe_theme_the_custom_logo(); ?>
 
             <?php
-            if (is_front_page()) :
-                get_template_part('components/features/hero-image/content', 'hero');
-
-            endif; ?>
+            if (is_front_page()) : get_template_part('components/features/hero-image/content', 'hero'); endif; ?>
 
 
             <?php get_template_part('components/navigation/navigation', 'top'); ?>
