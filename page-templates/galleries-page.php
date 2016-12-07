@@ -19,7 +19,7 @@ get_header(); ?>
         <div class="entry-content">
 
 
-            <div>
+            <div id="gallery_page_container">
                 <?php
                 // get the current page slug and id
                 $slug = get_post_field('post_name', get_post());
@@ -31,7 +31,7 @@ get_header(); ?>
                 $handle = opendir(dirname(realpath(__FILE__)) . '/../assets/images/' . $parent_post_slug . '/' . $slug);
                 while ($file = readdir($handle)) {
                     if ($file !== '.' && $file !== '..') {
-                        echo '<img src="wp-content/themes/fe_theme/assets/images/' . $parent_post_slug . '/' . $slug . '/' . $file . '" border="0" />';
+                        echo '<div class="gallery_page_tile"><img src="wp-content/themes/fe_theme/assets/images/' . $parent_post_slug . '/' . $slug . '/' . $file . '" border="0" /></div>';
                     }
                 } ?>
             </div>
