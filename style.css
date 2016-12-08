@@ -760,7 +760,6 @@ div.fe_theme-hero {
 .front-page-gallery {
   display: flex;
   flex-wrap: wrap;
-  height: 666px;
   width: 100%;
   align-items: center;
   justify-content: center; }
