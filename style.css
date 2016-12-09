@@ -561,7 +561,8 @@ table {
         width: 200px; }
     .main-navigation ul li:hover > ul,
     .main-navigation ul li.focus > ul {
-      left: auto; }
+      left: auto;
+      margin-left: -120px; }
   .main-navigation li {
     float: left;
     margin: 0px 25px 0px 25px;
@@ -675,6 +676,13 @@ body {
   height: 45px;
   /* Height of the footer */ }
 
+.site-content {
+  padding-bottom: 30px; }
+
+#primary {
+  margin-top: 0%;
+  padding: 0%; }
+
 .content-area {
   float: left;
   margin: 0 -25% 0 0;
@@ -752,10 +760,6 @@ div.fe_theme-hero {
     position: relative;
     top: 23%;
     transform: translateY(-50%); }
-
-#primary {
-  margin-top: 0%;
-  padding: 0%; }
 
 .front-page-gallery {
   display: flex;
