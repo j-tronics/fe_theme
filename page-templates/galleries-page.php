@@ -18,20 +18,28 @@ get_header(); ?>
 
         <div class="entry-content">
 
+            <script src="/path/to/masonry.pkgd.min.js"></script>
+
 
             <div id="gallery_page_container">
                 <?php
                 // get the current page slug and id
                 $slug = get_post_field('post_name', get_post());
                 $id = get_the_ID();
-                // get the parents slug and id
+                // get the parents slug and id and return the first value out of the returned array using reset
                 $parent_post_id = reset(get_post_ancestors($id));
                 $parent_post_slug = get_post_field('post_name', $parent_post_id);
                 // Use the slug to find the correct images directory and load any found images into img tags.
                 $handle = opendir(dirname(realpath(__FILE__)) . '/../assets/images/' . $parent_post_slug . '/' . $slug);
+                $image_dir = get_template_directory_uri() . '/assets/images';
                 while ($file = readdir($handle)) {
                     if ($file !== '.' && $file !== '..') {
-                        echo '<div class="gallery_page_tile"><img src="wp-content/themes/fe_theme/assets/images/' . $parent_post_slug . '/' . $slug . '/' . $file . '" border="0" /></div>';
+                        // wp-content/themes/fe_theme/parent_post_slug/post_slug/
+                        $file_url = $image_dir . '/' . $parent_post_slug . '/' . $slug . '/' . $file;
+                        echo '
+                    <div class="gallery_page_tile">
+                        <img src=" '. $file_url .'" border="0" />
+                    </div>';
                     }
                 } ?>
             </div>
