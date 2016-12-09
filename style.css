@@ -632,6 +632,9 @@ button.menu-toggle {
   padding-bottom: 10px;
   background-color: #2b2b2b; }
 
+.site-footer {
+  width: 100%; }
+
 /*--------------------------------------------------------------
 # Links
 --------------------------------------------------------------*/
@@ -671,14 +674,8 @@ body {
   background: currentColor;
   /* Fallback for when there is no custom background color defined. */ }
 
-.site-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 45px;
-  /* Height of the footer */ }
-
 #primary {
+  min-height: calc(100vh - 232px);
   margin-top: 0%;
   padding: 0%;
   color: white; }
@@ -750,7 +747,7 @@ article {
 --------------------------------------------------------------*/
 div.fe_theme-hero {
   width: 100%;
-  height: 500px;
+  height: 42vh;
   overflow: hidden;
   padding-bottom: 0;
   line-height: 0;
@@ -766,7 +763,8 @@ div.fe_theme-hero {
   flex-wrap: wrap;
   width: 100%;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  padding-bottom: 40px; }
   .front-page-gallery img {
     display: block;
     width: auto;
@@ -775,32 +773,27 @@ div.fe_theme-hero {
 
 @media screen and (max-width: 81.25em) {
   div.fe_theme-hero {
-    height: 400px; }
+    height: 32vh; }
 
   .front-page-gallery img {
-    max-width: 100%;
+    height: 500px;
+    max-width: 50%;
     max-height: 100%; } }
+@media screen and (max-width: 56.25em) {
+  div.fe_theme-hero {
+    height: 26vh; }
+
+  .front-page-gallery img {
+    max-width: 100%; } }
 @media screen and (max-width: 37.5em) {
   div.fe_theme-hero {
-    height: 300px; } }
+    height: 24vh; }
+
+  .front-page-gallery img {
+    max-width: 100%; } }
 /*--------------------------------------------------------------
 ## Contact Form
 --------------------------------------------------------------*/
-#contact-form-template {
-  max-width: 500px;
-  width: auto;
-  display: inline-block; }
-  #contact-form-template input {
-    width: 500px;
-    margin: 15px 1% 1% 1%; }
-  #contact-form-template textarea {
-    width: 500px; }
-
-.form-control-inline {
-  width: auto;
-  float: left;
-  margin-right: 5px; }
-
 div.ceremonies_page {
   padding-top: 40px;
   padding-left: 5%;
