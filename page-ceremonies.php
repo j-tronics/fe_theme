@@ -6,16 +6,16 @@ get_header(); ?>
         <main id="main" class="no-sidebar site-main" role="main">
             <div class="ceremonies_page">
                 <div>
-                    <img src="wp-content/themes/fe_theme/assets/images/ceremonies/index/aisles.jpg">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ceremonies/index/aisles.jpg">
                 </div>
                 <div>
-                    <img src="wp-content/themes/fe_theme/assets/images/ceremonies/index/bouquets.jpg">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ceremonies/index/bouquets.jpg">
                 </div>
                 <div>
-                    <img src="wp-content/themes/fe_theme/assets/images/ceremonies/index/personal_flowers.jpg">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ceremonies/index/personal_flowers.jpg">
                 </div>
                 <div>
-                    <img src="wp-content/themes/fe_theme/assets/images/ceremonies/index/altars.jpg">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ceremonies/index/altars.jpg">
                 </div>
 
             </div>
