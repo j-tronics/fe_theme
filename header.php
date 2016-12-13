@@ -17,6 +17,9 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
     <!--<<script src="/wp-content/themes/fe_theme/assets/js/singlePageApp.js" ></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="wp-content/themes/fe_theme/assets/js/expand-top-menu.js"></script>
+    <script src="wp-content/themes/fe_theme/assets/js/contact_form_submission.js"></script>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
     <?php wp_head(); ?>
