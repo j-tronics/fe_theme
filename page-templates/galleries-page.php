@@ -17,10 +17,6 @@ get_header(); ?>
         </header>
 
         <div class="entry-content">
-
-            <script src="/path/to/masonry.pkgd.min.js"></script>
-
-
             <div id="gallery_page_container">
                 <?php
                 // get the current page slug and id
@@ -38,7 +34,7 @@ get_header(); ?>
                         $file_url = $image_dir . '/' . $parent_post_slug . '/' . $slug . '/' . $file;
                         echo '
                     <div class="gallery_page_tile">
-                        <img src=" '. $file_url .'" border="0" />
+                        <img src=" ' . $file_url . '" border="0" />
                     </div>';
                     }
                 } ?>
