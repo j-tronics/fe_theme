@@ -13,5 +13,5 @@ function contact_form_submission() {
         'supports'      => array( 'title', 'editor'),
         'has_archive'   => true,
     );
-    register_post_type( 'portfolio_item', $args ); }
+    register_post_type( 'fe_contact_form_item', $args ); }
     add_action( 'init', 'contact_form_submission' );
