@@ -8,10 +8,12 @@ function contact_form_submission() {
     $args = array(
         'labels'        => $labels,
         'description'   => 'Holds our users contact form submissions',
-        'public'        => true,
+        'public'        => false,
+        'exclude_from_serach' => true,
+        'show_ui' => true,
         'menu_position' => 5,
         'supports'      => array( 'title', 'editor'),
         'has_archive'   => true,
     );
-    register_post_type( 'fe_contact_form_item', $args ); }
+    register_post_type( 'fe_contact_form', $args ); }
     add_action( 'init', 'contact_form_submission' );
