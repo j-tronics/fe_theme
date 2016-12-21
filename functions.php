@@ -173,5 +173,7 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+
 //Custom contact form post type
-require get_template_directory() . '/contact_form_post_type.php';
+require get_template_directory() . '/contact_form.php';
+

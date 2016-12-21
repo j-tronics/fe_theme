@@ -1,61 +1,84 @@
 <?php
 
-//response generation function
-
-$response = "";
-
-//function to generate response
-function generate_response($type, $message){
-    global $response;
-
-    if($type == "success")
-
-        $response = "<div class='success'>{$message}</div>";
-    else
-        $response = "<div class='error'>{$message}</div>";
-
+function contact_form_submission()
+{
+    $labels = array(
+        'name' => _x('Form Submissions', 'post type general name'),
+        'singular_name' => _x('Contact Form Submission', 'post type singular name'),
+        'menu_name' => 'Contact Form Submissions'
+    );
+    $args = array(
+        'labels' => $labels,
+        'description' => 'Holds our users contact form submissions',
+        'public' => false,
+        'exclude_from_serach' => true,
+        'show_ui' => true,
+        'menu_position' => 5,
+        'supports' => array('title', 'editor'),
+        'has_archive' => true,
+    );
+    register_post_type('fe_contact_form', $args);
 }
 
-//response messages
-$not_human       = "Human verification incorrect.";
-$missing_content = "Please supply all information.";
-$email_invalid   = "Email Address Invalid.";
-$message_unsent  = "Message was not sent. Try Again.";
-$message_sent    = "Thanks! Your message has bee    n sent.";
+add_action('init', 'contact_form_submission');
 
-//user posted variables
-$name = $_POST['message_name'];
-$email = $_POST['message_email'];
-$message = $_POST['message_text'];
-$human = $_POST['message_human'];
+function send_form_callback()
+{
+    $nonce = $_POST['contact_form_nonce'];
+    $name = $_POST['contact_name'];
+    $email = $_POST['contact_email'];
+    $phone_number = $_POST['contact_phone_number'];
+    $source_of_introduction = $_POST['source_of_introduction'];
+    $event_date = $_POST['event_date'];
+    $event_location = $_POST['event_location'];
+    $contact_message = $_POST['contact_message'];
+    $budget = $_POST['radio_budget_input'];
 
-
-$to = get_option('admin_email');
-$subject = "Someone sent a message from ".get_bloginfo('name');
-$headers = 'From: '. $email . "\r\n" .
-    'Reply-To: ' . $email . "\r\n";
-
-if(!$human == 0){
-    if($human != 2) generate_response("error", $not_human); //not human!
-    else {
-        //validate email
-        if(!filter_var($email, FILTER_VALIDATE_EMAIL))
-            generate_response("error", $email_invalid);
-        else //email is valid
-        {
-            //validate presence of name and message
-            if(empty($name) || empty($message)){
-                generate_response("error", $missing_content);
-            }
-            else //ready to go!
-            {
-                $sent = mail($to, $subject, $message, $headers);
-                if($sent) generate_response("success", $message_sent); //message sent!
-                else generate_response("error", $message_unsent); //message wasn't sent
-            }
+    try {
+        if (!wp_verify_nonce($nonce, 'contact_form_nonce') || empty($name) || empty($email) || empty($contact_message)) {
+            throw new Exception('Bad form parameters. Check the markup to make sure you are naming the inputs correctly.');
         }
-    }
-}
-else if ($_POST['submitted']) generate_response("error", $missing_content);
+        if (!is_email($email)) {
+            throw new Exception('Email address not formatted correctly.');
+        }
 
-?>
+        $subject = 'Contact Form: ' . ' - ' . $name;
+        $headers = 'From: My Blog Contact Form <contact@myblog.com>';
+        $send_to = "ncrmro@gmail.com";
+        $subject = "Contact Form: " . $name;
+        $message = "Message from " . $name . ": \n\n " . $contact_message . " \n\n Reply to: " . $email;
+
+
+        $postarr = array(
+            'post_author' => "ncrmro",
+            'post_title' => "Submitted by: " . $name,
+            'post_type' => "fe_contact_form",
+            'post_content' =>
+                "Name: " . $name . "\n\n" .
+                "Email: " . $email . "\n\n" .
+                "Phone Number: " . $phone_number . "\n\n" .
+                "Source of Introduction: " . $source_of_introduction . "\n\n" .
+                "Event Date: " . $event_date . "\n\n" .
+                "Event Location: " . $event_location . "\n\n" .
+                "Message: " . $contact_message . "\n\n" .
+                "Budget: " . $budget . "\n\n"
+        );
+
+        wp_insert_post($postarr, false);
+
+
+        if (wp_mail($send_to, $subject, $message, $headers)) {
+            echo json_encode(array('status' => 'success', 'message' => 'Contact message sent.'));
+            exit;
+        } else {
+            throw new Exception('Failed to send email. Check AJAX handler.');
+        }
+    } catch (Exception $e) {
+        echo json_encode(array('status' => 'error', 'message' => $e->getMessage()));
+        exit;
+    }
+
+}
+
+add_action("wp_ajax_contact_send", "send_form_callback");
+add_action("wp_ajax_nopriv_contact_send", "send_form_callback");
