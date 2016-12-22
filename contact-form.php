@@ -42,26 +42,26 @@ function send_form_callback()
             throw new Exception('Email address not formatted correctly.');
         }
 
-        $subject = 'Contact Form: ' . ' - ' . $name;
-        $headers = 'From: My Blog Contact Form <contact@myblog.com>';
-        $send_to = "ncrmro@gmail.com";
-        $subject = "Contact Form: " . $name;
-        $message = "Message from " . $name . ": \n\n " . $contact_message . " \n\n Reply to: " . $email;
+        $post_content =
+            "Name: " . $name . "\n\n" .
+            "Email: " . $email . "\n\n" .
+            "Phone Number: " . $phone_number . "\n\n" .
+            "Source of Introduction: " . $source_of_introduction . "\n\n" .
+            "Event Date: " . $event_date . "\n\n" .
+            "Event Location: " . $event_location . "\n\n" .
+            "Message: " . $contact_message . "\n\n" .
+            "Budget: " . $budget . "\n\n";
 
+        $headers = 'From: FE Website Contact Form Submission <contact@floralevents.com>';
+        $send_to = "bill@floralevents.com";
+        $subject = "Contact Form: " . $name;
+        $message = $post_content;
 
         $postarr = array(
             'post_author' => "ncrmro",
             'post_title' => "Submitted by: " . $name,
             'post_type' => "fe_contact_form",
-            'post_content' =>
-                "Name: " . $name . "\n\n" .
-                "Email: " . $email . "\n\n" .
-                "Phone Number: " . $phone_number . "\n\n" .
-                "Source of Introduction: " . $source_of_introduction . "\n\n" .
-                "Event Date: " . $event_date . "\n\n" .
-                "Event Location: " . $event_location . "\n\n" .
-                "Message: " . $contact_message . "\n\n" .
-                "Budget: " . $budget . "\n\n"
+            'post_content' => $post_content
         );
 
         wp_insert_post($postarr, false);

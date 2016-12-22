@@ -19,101 +19,17 @@ get_header(); ?>
 
                     <div id="center-form">
 
-                        <form id="contact-form" >
+                        <form id="contact-form">
                             <input type="hidden" name="action" value="contact_send"/>
-                            <?php wp_nonce_field( "contact_form_nonce","contact_form_nonce") ?>
-
-                            <div id="innerForm">
-                                <div id="leftForm">
-                                    <label for="contact_name">Name: <span>*</span>
-                                        <input type="text" name="contact_name" placeholder="Your name.."/>
-                                    </label>
-                                    <br>
-
-                                    <label for="contact_email">Email: <span>*</span>
-                                        <input type="text" name="contact_email">
-                                    </label>
-                                    <br>
-
-
-                                    <label for="contact_phone_number">Phone Number: <span>*</span>
-                                        <input type="text" name="contact_phone_number">
-                                    </label>
-                                    <br>
-
-                                    <label for="source_of_introduction">How did you here about us?: <span>*</span>
-                                        <input type="text" name="source_of_introduction">
-                                    </label>
-                                    Whats 2 + 2:
-                                    <input type="text" id="message_human" name="message_human"/>
-                                    <br/>
-                                    <br/>
-                                </div>
-
-
-                                <br>
-                                <div id="rightForm">
-
-                                    <label for="event_date">Event Date: <span>*</span>
-                                        <input type="text" name="event_date">
-                                    </label>
-                                    <br>
-
-
-                                    <label for="event_location">Event('s) Location: <span>*</span>
-                                        <input type="text" name="event_location">
-                                    </label>
-
-                                    <br>
-
-                                    <br>
-                                    <label for="message_text">Message: <span>*</span>
-                                        <textarea type="text" name="contact_message"></textarea>
-                                    </label>
-
-                                    <ul id="radio_budget_input">
-                                        <li>
-                                            <input type="radio" name="radio_budget_input" id="r1" value="$1000"><label
-                                                for="r1">Less
-                                                than $1000</label>
-                                        </li>
-                                        <li>
-                                            <input type="radio" name="radio_budget_input" id="r2"
-                                                   value="$1000 - $1500"><label
-                                                for="r2">$1000 - $1500</label>
-                                        </li>
-                                        <li>
-                                            <input type="radio" name="radio_budget_input" id="r3"
-                                                   value="$2000 - $3000"><label
-                                                for="r3">$2000 - $3000</label>
-                                        </li>
-                                        <li>
-                                            <input type="radio" name="radio_budget_input" id="r4"
-                                                   value="$3000 - $4000"><label
-                                                for="r4">$3000 - $4000</label>
-
-                                        </li>
-                                        <li>
-                                            <input type="radio" name="radio_budget_input" id="r5"
-                                                   value="$4000 - $5000"><label
-                                                for="r5">$4000 - $5000</label>
-                                        </li>
-                                        <li>
-                                            <input type="radio" name="radio_budget_input" id="r6"
-                                                   value="$5000 - $7500"><label
-                                                for="r6">$5000 - $7500</label>
-
-                                        </li>
-                                        <li>
-                                            <input type="radio" name="radio_budget_input" id="r7"
-                                                   value="More than $7500"><label
-                                                for="r7">More than $7500</label>
-                                        </li>
-                                    </ul>
-                                    <input id="contact_form_submit_button" type="submit" value="Send Message"/>
-
-                                </div>
-                            </div>
+                            <?php wp_nonce_field("contact_form_nonce", "contact_form_nonce") ?>
+                                <input type="text" name="contact_name" placeholder="Your name.."/>
+                                <input type="text" name="contact_email" placeholder="Email">
+                                <input type="text" name="contact_phone_number" placeholder="Phone Number">
+                                <input type="text" name="source_of_introduction" placeholder="How did you hear about us?">
+                                <input type="text" name="event_date" placeholder="Event Data">
+                                <input type="text" name="event_location" placeholder="Event Location">
+                                <textarea type="text" name="contact_message" >Tell us a bit more...</textarea>
+                            <input id="contact_form_submit_button" type="submit" value="Send Message"/>
                         </form>
                     </div>
                 </div>
@@ -147,12 +63,12 @@ get_header(); ?>
                             });
                         });
 
-                        function handleFormError () {
+                        function handleFormError() {
                             is_sending = false; // Reset the is_sending var so they can try again...
                             alert(failure_message);
                         }
 
-                        function validateInputs () {
+                        function validateInputs() {
                             var $name = $('input[name="contact_name"]').val(),
                                 $email = $('input[name="contact_email"]').val(),
                                 $message = $('textarea[name="contact_message"]').val();
