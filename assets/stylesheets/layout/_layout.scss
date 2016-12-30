@@ -22,6 +22,11 @@ body {
   background: $color__background-body; /* Fallback for when there is no custom background color defined. */
 }
 
+header {
+  width: 100%;
+  text-align: center;
+}
+
 
 
 .site-content {
@@ -29,15 +34,21 @@ body {
 
 #primary {
   min-height: calc(100vh - 232px);
-  margin-top: 0%;
-  padding: 0%;
   color: $color__text-color;
-
+  text-align: center;
+  padding: 0% 2% 0% 2%;
+  margin: 0;
   #main {
+    background-color: $color__main_background_color;
+    margin: 0;
 
   }
 }
 
+#full-height-wrappper {
+  min-height: 100%;
+  margin-bottom: -77px;
+}
 
 @import "content-sidebar";
 // @import "sidebar-content";

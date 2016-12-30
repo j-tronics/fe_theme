@@ -65,7 +65,8 @@ dfn {
 
 h1 {
 	font-size: 2em;
-	margin: 0.67em 0;
+	padding-top: 25px;
+	margin-top: 0px;
 }
 
 mark {
@@ -214,37 +215,3 @@ th {
 	padding: 0;
 }
 
-/*--------------------------------------------------------------
-## Start custom css overrides
---------------------------------------------------------------*/
-
-
-#inner-body {
-	height: 100%;
-}
-
-header {
-	width: 100%;
-	text-align: center;
-}
-
-#outer-wrap-centered {
-	margin: 0 auto;
-	height: 100%;
-}
-
-#primary {
-	text-align: center;
-	padding: 0% 5% 0% 5%;
-	margin: 0;
-
-}
-
-#site-main {
-	margin: 0;
-}
-
-#full-height-wrappper {
-	min-height: 100%;
-	margin-bottom: -77px;
-}
