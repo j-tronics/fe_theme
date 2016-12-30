@@ -153,6 +153,25 @@ function fe_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'fe_theme_scripts' );
 
+function wpfa_add_slicknav()
+{
+	/** Styles handles by css*/
+	//wp_enqueue_style( 'SlickNav-CSS-main', get_template_directory_uri() . '/slicknav/slicknav.css', array(), '1.0.1', 'screen' );
+	/** Enqueue the SlickNav JavaScript with jQuery dependency */
+	wp_enqueue_script('SlickNav-JS-main', get_template_directory_uri() . '/slicknav/jquery.slicknav.min.js', array('jquery'), '1.0.1', true);
+	/** Enqueue SlickNav initialization script with jQuery and SlickNav JavaScript main dependencies */
+	wp_enqueue_script(
+		'SlickNav-init', get_template_directory_uri() . '/slicknav/wpfa-slicknav-init.js', array(
+		'jquery',
+		'SlickNav-JS-main'
+	), '1.0', true
+	);
+	/** Enqueue SlickNav mobile layout only styles with SlickNav CSS main dependency */
+	wp_enqueue_style('SlickNav-layout', get_template_directory_uri() . '/slicknav/wpfa-slicknav.css', array('SlickNav-CSS-main'), '1.0', 'screen');
+}
+
+add_action('wp_enqueue_scripts', 'wpfa_add_slicknav');
+
 /**
  * Custom template tags for this theme.
  */
