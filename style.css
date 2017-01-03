@@ -469,19 +469,32 @@ table {
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
-@media screen and (min-width: 800px) {
-  nav#site-navigation.main-navigation {
-    clear: both;
+nav#site-navigation.main-navigation {
+  clear: both;
+  display: inline-block;
+  float: left;
+  width: 100%;
+  background: #23282d;
+}
+
+nav#site-navigation.main-navigation button.menu-toggle {
+  color: white;
+  background-color: #23282d;
+  border: none;
+  padding: 10px;
+}
+
+nav#site-navigation.main-navigation ul {
+  list-style: none;
+}
+
+nav#site-navigation.main-navigation .menu-toggle:before {
+  content: "\2630";
     display: inline-block;
-    float: left;
-    width: 100%;
-    background: #23282d;
-  }
+  margin-right: 5px;
+}
 
-  nav#site-navigation.main-navigation ul {
-    list-style: none;
-  }
-
+@media screen and (min-width: 800px) {
   nav#site-navigation.main-navigation li {
     float: left;
     margin: 0px 25px 0px 25px;
@@ -489,7 +502,6 @@ table {
     padding-top: 10px;
     padding-bottom: 10px;
   }
-
   nav#site-navigation.main-navigation a {
     display: block;
     text-decoration: none;
@@ -530,29 +542,8 @@ table {
     width: 200px;
   }
 
-  .menu-toggle:before {
-    content: "\2630";
-    display: inline-block;
-    margin-right: 5px;
-  }
-}
-@media screen and (min-width: 800px) and (max-width: 800px) {
-  ul#top-menu {
-    display: none; }
-
-  .menu-toggle {
-    display: none; }
-
-  .main-navigation ul {
-    display: none;
-  }
-}
-@media screen and (min-width: 800px) {
   button.menu-toggle {
-    color: white;
-    background-color: #23282d;
-    border: none;
-    padding: 10px;
+    display: none;
   }
 }
 .site-main .comment-navigation, .site-main

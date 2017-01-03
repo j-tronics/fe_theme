@@ -1,41 +1,58 @@
-@media screen and (min-width: 800px) {
-
-  nav#site-navigation.main-navigation {
+nav#site-navigation.main-navigation {
   clear: both;
   display: inline-block;
   float: left;
   width: 100%;
-    background: $color__nav_background_color;
+  background: $color__nav_background_color;
+  button.menu-toggle {
+    color: white;
+    background-color: #23282d;
+    border: none;
+    padding: 10px;
+    &:hover {
+    }
 
+    &:active,
+    &:focus {
+
+    }
+  }
 
   ul {
     list-style: none
   }
-
-
-  li {
-    float: left;
-    margin: 0px 25px 0px 25px;
-    position: relative;
-    padding-top: 10px;
-    padding-bottom: 10px;
-
-    &:hover > a,
-    &.focus > a {
-    }
-  }
-
-  a {
-    display: block;
-    text-decoration: none;
-  }
-
-  .current_page_item > a,
-  .current-menu-item > a,
-  .current_page_ancestor > a,
-  .current-menu-ancestor > a {
+  .menu-toggle:before {
+    content: "\2630";
+    display: inline-block;
+    margin-right: 5px;
   }
 }
+
+@media screen and (min-width: 800px) {
+  nav#site-navigation.main-navigation {
+    li {
+      float: left;
+      margin: 0px 25px 0px 25px;
+      position: relative;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      &:hover > a,
+      &.focus > a {
+      }
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+    }
+
+    .current_page_item > a,
+    .current-menu-item > a,
+    .current_page_ancestor > a,
+    .current-menu-ancestor > a {
+    }
+  }
 
   ul#top-menu {
     display: inline-block;
@@ -83,39 +100,11 @@
     a:hover,
     a.focus {
     }
-}
-
-
-.menu-toggle:before {
-  content: "\2630";
-  display: inline-block;
-  margin-right: 5px;
-}
-
-  @media screen and (max-width: 800px) {
-    ul#top-menu {
-      display: none
-    }
-  .menu-toggle {
-    display: none;
   }
-  .main-navigation ul {
-    display: none;
-  }
-}
 
   button.menu-toggle {
-  color: white;
-  background-color: #23282d;
-  border: none;
-    padding: 10px;
-  &:hover {
+    display: none;
   }
 
-  &:active,
-  &:focus {
-
-  }
 }
 
-}
