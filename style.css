@@ -435,7 +435,7 @@ textarea {
 form#contact-form {
   padding-left: 10%;
   padding-right: 10%;
-  padding-top: 40px;
+  padding-top: 0;
   padding-bottom: 20px;
   color: white; }
 
@@ -570,7 +570,9 @@ nav#site-navigation.main-navigation .menu-toggle:before {
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #2b2b2b; }
+  background-color: #2b2b2b;
+  margin-top: 10px;
+}
 
 .site-footer {
   width: 100%; }
@@ -583,7 +585,8 @@ a {
   a:visited {
     color: white; }
   a:hover, a:focus, a:active {
-    color: midnightblue; }
+    color: #white;
+  }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
@@ -630,6 +633,7 @@ header {
 #primary #main {
   background-color: #2b2b2b;
   margin: 0;
+  min-height: 600px;
 }
 
 #full-height-wrappper {
@@ -695,7 +699,7 @@ header {
   margin: 0 0 1.5em; }
 
 article {
-  width: 90%;
+  width: 75%;
   position: relative;
   margin: 0 auto !important;
   padding-bottom: 25px; }
@@ -756,6 +760,7 @@ div.ceremonies_page {
   padding-top: 40px;
   padding-left: 5%;
   padding-right: 5%;
+  padding-bottom: 40px;
   display: inline-flex; }
   div.ceremonies_page div {
     padding: 1px; }
