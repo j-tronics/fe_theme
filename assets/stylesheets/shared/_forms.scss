@@ -66,3 +66,38 @@ form#contact-form {
   text-align: center;
   max-width: 1000px;
 }
+
+div#birs_booking_box {
+  display: inline-block;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+form#birs_appointment_form {
+  .birs_client_type {
+    display: none !important;
+  }
+  .birs_client_password {
+    display: none !important;
+
+  }
+
+  .birs_client_password_retype {
+    display: none !important;
+  }
+  .birs_appointment_location {
+    display: none !important;
+  }
+  .birs_appointment_service {
+    display: none !important;
+  }
+  #birs_appointment_timeoptions {
+    display: inline;
+  }
+}
+
+#birs_appointment_form .birs_field_content, #birs_appointment_form .birs_form_field select {
+  max-width: 100% !important;
+
+}
+

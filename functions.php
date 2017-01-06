@@ -196,3 +196,13 @@ require get_template_directory() . '/inc/jetpack.php';
 //Custom contact form post type
 require get_template_directory() . '/contact-form.php';
 
+function scheduling_overrides()
+{
+	wp_enqueue_script('scheduling-form', get_template_directory_uri() . '/assets/js/schedule-form.js', array(), '20151215', true);
+}
+
+add_action('wp_enqueue_scripts', 'scheduling_overrides');
+
+
+
+
