@@ -9,13 +9,6 @@ nav#site-navigation.main-navigation {
     background-color: #23282d;
     border: none;
     padding: 10px;
-    &:hover {
-    }
-
-    &:active,
-    &:focus {
-
-    }
   }
 
   ul {
@@ -37,9 +30,6 @@ nav#site-navigation.main-navigation {
       padding-top: 10px;
       padding-bottom: 10px;
 
-      &:hover > a,
-      &.focus > a {
-      }
     }
 
     a {
@@ -47,11 +37,6 @@ nav#site-navigation.main-navigation {
       text-decoration: none;
     }
 
-    .current_page_item > a,
-    .current-menu-item > a,
-    .current_page_ancestor > a,
-    .current-menu-ancestor > a {
-    }
   }
 
   ul#top-menu {
@@ -108,3 +93,19 @@ nav#site-navigation.main-navigation {
 
 }
 
+a[href*="facebook.com"] {
+  color: transparent;
+  background-repeat: no-repeat;
+  width: 24px;
+  margin: 0 -15px;
+  background-image: url(assets/svgs/facebook.svg);
+}
+
+a[href*="twitter.com"] {
+  color: transparent;
+  background-repeat: no-repeat;
+  width: 24px;
+  margin: 0 -30px;
+  background-image: url(assets/svgs/twitter.svg);
+
+}
