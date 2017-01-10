@@ -16,19 +16,24 @@ get_header(); ?>
                     <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
                 </header>
                 <div class="entry-content">
-
                     <div id="center-form">
-
                         <form id="contact-form">
                             <input type="hidden" name="action" value="contact_send"/>
                             <?php wp_nonce_field("contact_form_nonce", "contact_form_nonce") ?>
-                                <input type="text" name="contact_name" placeholder="Your name.."/>
-                                <input type="text" name="contact_email" placeholder="Email">
-                                <input type="text" name="contact_phone_number" placeholder="Phone Number">
-                                <input type="text" name="source_of_introduction" placeholder="How did you hear about us?">
-                                <input type="text" name="event_date" placeholder="Event Data">
-                                <input type="text" name="event_location" placeholder="Event Location">
-                                <textarea type="text" name="contact_message" >Tell us a bit more...</textarea>
+                            <p>
+                                Use this contact form to get in touch with the Floral Events team.
+                                Please add your contact info and information on the date and location of the wedding.
+                            </p>
+                            <input type="text" name="contact_name" placeholder="Your name.."/>
+                            <input type="text" name="contact_email" placeholder="Email">
+                            <input type="text" name="contact_phone_number" placeholder="Phone Number">
+                            <input type="text" name="source_of_introduction" placeholder="How did you hear about us?">
+                            <input type="text" name="event_date" placeholder="Event Date">
+                            <input type="text" name="event_location" placeholder="Event Location">
+                            <textarea type="text" name="contact_message">Our Wedding and Event planners are available for consultations on weekdays, leave your desired appointment dates and times here.</textarea>
+                            <p>
+                                Consolidations are available via in Person, Phone or Skype.
+                            </p>
                             <input id="contact_form_submit_button" type="submit" value="Send Message"/>
                         </form>
                     </div>

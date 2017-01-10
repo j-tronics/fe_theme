@@ -32,7 +32,6 @@ function send_form_callback()
     $event_date = $_POST['event_date'];
     $event_location = $_POST['event_location'];
     $contact_message = $_POST['contact_message'];
-    $budget = $_POST['radio_budget_input'];
 
     try {
         if (!wp_verify_nonce($nonce, 'contact_form_nonce') || empty($name) || empty($email) || empty($contact_message)) {
@@ -50,7 +49,6 @@ function send_form_callback()
             "Event Date: " . $event_date . "\n\n" .
             "Event Location: " . $event_location . "\n\n" .
             "Message: " . $contact_message . "\n\n" .
-            "Budget: " . $budget . "\n\n";
 
         $headers = 'From: FE Website Contact Form Submission <contact@floralevents.com>';
         $send_to = "bill@floralevents.com";
