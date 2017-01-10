@@ -453,23 +453,18 @@ div#birs_booking_box {
 form#birs_appointment_form .birs_client_type {
   display: none !important;
 }
-
 form#birs_appointment_form .birs_client_password {
   display: none !important;
 }
-
 form#birs_appointment_form .birs_client_password_retype {
   display: none !important;
 }
-
 form#birs_appointment_form .birs_appointment_location {
   display: none !important;
 }
-
 form#birs_appointment_form .birs_appointment_service {
   display: none !important;
 }
-
 form#birs_appointment_form #birs_appointment_timeoptions {
   display: inline;
 }
@@ -580,7 +575,6 @@ nav#site-navigation.main-navigation .menu-toggle:before {
     display: none;
   }
 }
-
 a[href*="facebook.com"] {
   color: transparent;
   background-repeat: no-repeat;
@@ -807,47 +801,67 @@ div.fe_theme-hero {
 /*--------------------------------------------------------------
 ## Contact Form
 --------------------------------------------------------------*/
-div.ceremonies_page {
+div.gallery_index_page {
   padding-top: 40px;
   padding-left: 5%;
   padding-right: 5%;
   padding-bottom: 40px;
+  flex-wrap: wrap;
   display: inline-flex; }
-  div.ceremonies_page div {
+
+div.gallery_index_page img {
+  min-height: 375px;
+}
+
+div.gallery_index_page div.gallery_center {
+  max-width: 32%;
+  margin: 2px;
     padding: 1px; }
-    div.ceremonies_page div img {
+
+div.gallery_index_page div.gallery_center a {
+  background-color: #23282d;
+  padding: 10px 5px;
+  max-width: 49%;
+}
+
+div.gallery_index_page div.gallery_center a img {
+  max-width: 100%;
+  height: auto;
+  max-height: 500px;
+}
+
+div.gallery_index_page div.gallery_center a.gallery_center_left {
+  float: left;
+  padding-left: 5px;
+}
+
+div.gallery_index_page div.gallery_center a.gallery_center_right {
+  float: right;
+  padding-right: 5px;
+}
+
+div.gallery_index_page a.gallery_column {
+  background-color: #23282d;
+  padding: 10px 5px;
+  margin: 2px;
+  max-width: 32%;
+}
+
+div.gallery_index_page a.gallery_column img {
       max-width: 100%;
       height: auto;
       max-height: 500px; }
 
 @media screen and (max-width: 81.25em) {
-  div.ceremonies_page img {
+  div.gallery_index_page img {
+    min-height: 200px;
     max-height: 600px; } }
-#gallery_page_container {
-  /* Prevent vertical gaps */
-  line-height: 0;
-  -webkit-column-count: 3;
-  -webkit-column-gap: 0px;
-  -moz-column-count: 3;
-  -moz-column-gap: 0px;
-  column-count: 3;
-  column-gap: 0px; }
 
-div.gallery_page_tile img {
-  width: 100% !important;
-  height: auto !important;
-  padding: 2px; }
-
-@media (max-width: 800px) {
-  #gallery_page_container {
-    -moz-column-count: 2;
-    -webkit-column-count: 2;
-    column-count: 2; } }
-@media (max-width: 400px) {
-  #gallery_page_container {
-    -moz-column-count: 1;
-    -webkit-column-count: 1;
-    column-count: 1; } }
+@media screen and (max-width: 37.5em) {
+  div.gallery_index_page img {
+    min-height: 0;
+  }
+}
 /*--------------------------------------------------------------
 # Comments
 --------------------------------------------------------------*/
