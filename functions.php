@@ -42,7 +42,7 @@ function fe_theme_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	add_image_size( 'fe_theme-featured-image', 640, 9999 );
+	add_image_size('fe_theme-featured-image', 2560, 9999);
 	add_image_size( 'fe_theme-hero', 2560, 900, true );
 	add_image_size( 'fe_theme-thumbnail-avatar', 100, 100, true );
 
@@ -145,6 +145,9 @@ function fe_theme_scripts() {
 
 	wp_enqueue_script( 'fe_theme-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
 
+	wp_enqueue_script('scheduling-form', get_template_directory_uri() . '/assets/js/schedule-form.js', array(), '20151215', true);
+
+
 	wp_enqueue_script( 'fe_theme-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -191,18 +194,3 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
-
-
-//Custom contact form post type
-require get_template_directory() . '/contact-form.php';
-
-function scheduling_overrides()
-{
-	wp_enqueue_script('scheduling-form', get_template_directory_uri() . '/assets/js/schedule-form.js', array(), '20151215', true);
-}
-
-add_action('wp_enqueue_scripts', 'scheduling_overrides');
-
-
-
-

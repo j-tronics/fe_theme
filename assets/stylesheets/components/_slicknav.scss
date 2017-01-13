@@ -223,4 +223,23 @@ ul.slicknav_menu {
     display: none;
 
   }
+  ul {
+    li {
+      a {
+        height: 50px;
+      }
+    }
+
+  }
+
+  a[href*="facebook.com"] {
+    color: transparent;
+    margin: 0 auto;
+  }
+
+  a[href*="twitter.com"] {
+    color: transparent;
+    margin: 0 auto;
+
+  }
 }

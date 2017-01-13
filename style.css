@@ -473,6 +473,10 @@ form#birs_appointment_form #birs_appointment_timeoptions {
   max-width: 100% !important;
 }
 
+.contact-form {
+  margin: 0 !important;
+}
+
 /*--------------------------------------------------------------
 # Buttons
 --------------------------------------------------------------*/
@@ -579,7 +583,7 @@ a[href*="facebook.com"] {
   color: transparent;
   background-repeat: no-repeat;
   width: 24px;
-  margin: 0 -25px;
+  margin: 0 -15px;
   background-image: url(assets/svgs/facebook.svg);
 }
 
@@ -587,7 +591,7 @@ a[href*="twitter.com"] {
   color: transparent;
   background-repeat: no-repeat;
   width: 24px;
-  margin: 0 -25px;
+  margin: 0 -30px;
   background-image: url(assets/svgs/twitter.svg);
 }
 
@@ -798,13 +802,20 @@ div.fe_theme-hero {
     height: 24vh;
   }
 }
+
+.front_page_awards img {
+  max-width: 120px;
+  max-height: 120px;
+  margin: 10px;
+}
+
 /*--------------------------------------------------------------
 ## Contact Form
 --------------------------------------------------------------*/
 div.gallery_index_page {
   padding-top: 40px;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 1%;
+  padding-right: 1%;
   padding-bottom: 40px;
   flex-wrap: wrap;
   display: inline-flex; }
@@ -814,7 +825,7 @@ div.gallery_index_page img {
 }
 
 div.gallery_index_page div.gallery_center {
-  max-width: 32%;
+  max-width: 33%;
   margin: 2px;
     padding: 1px; }
 
@@ -844,7 +855,7 @@ div.gallery_index_page a.gallery_column {
   background-color: #23282d;
   padding: 10px 5px;
   margin: 2px;
-  max-width: 32%;
+  max-width: 33%;
 }
 
 div.gallery_index_page a.gallery_column img {
@@ -856,12 +867,30 @@ div.gallery_index_page a.gallery_column img {
   div.gallery_index_page img {
     min-height: 200px;
     max-height: 600px; } }
-
 @media screen and (max-width: 37.5em) {
   div.gallery_index_page img {
     min-height: 0;
   }
 }
+
+article.category-brides {
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 0px;
+}
+
+article.category-brides div.post-thumbnail {
+  overflow: hidden;
+  max-height: 600px;
+}
+
+article.category-brides div.post-thumbnail a img {
+  width: 100%;
+  position: relative;
+  transform: translateY(-40%);
+}
+
 /*--------------------------------------------------------------
 # Comments
 --------------------------------------------------------------*/
@@ -1187,6 +1216,20 @@ ul.slicknav_menu ul.sub-menu {
 @media screen and (max-width: 800px) {
   ul#top-menu {
     display: none;
+  }
+
+  ul li a {
+    height: 50px;
+  }
+
+  a[href*="facebook.com"] {
+    color: transparent;
+    margin: 0 auto;
+  }
+
+  a[href*="twitter.com"] {
+    color: transparent;
+    margin: 0 auto;
   }
 }
 
