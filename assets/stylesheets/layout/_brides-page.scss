@@ -1,0 +1,18 @@
+
+article.category-brides {
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 0px;
+  div.post-thumbnail {
+    overflow: hidden;
+    max-height: 600px;
+    a {
+      img {
+        width: 100%;
+        position: relative;
+        transform: translateY(-40%);
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 div.gallery_index_page {
   padding-top: 40px;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 1%;
+  padding-right: 1%;
   padding-bottom: 40px;
   flex-wrap: wrap;
   display: inline-flex;
@@ -9,7 +9,7 @@ div.gallery_index_page {
     min-height: 375px;
   }
   div.gallery_center {
-    max-width: 32%;
+    max-width: 33%;
     margin: 2px;
     padding: 1px;
     a {
@@ -26,18 +26,16 @@ div.gallery_index_page {
       float: left;
       padding-left: 5px;
     }
-  ;
     a.gallery_center_right {
       float: right;
       padding-right: 5px;
     }
-  ;
   }
   a.gallery_column {
     background-color: #23282d;
     padding: 10px 5px;
     margin: 2px;
-    max-width: 32%;
+    max-width: 33%;
     img {
       max-width: 100%;
       height: auto;
