@@ -31,9 +31,9 @@ div.fe_theme-hero {
 
 
 //Medium Screen
-@media screen and (max-width: 81.25em) {
+@media screen and (max-width: 56.25em) {
   div.fe_theme-hero {
-    height: 32vh;
+    height: 36vh;
   }
   .front-page-gallery {
     img {
@@ -48,11 +48,6 @@ div.fe_theme-hero {
 @media screen and (max-width: 56.25em) {
   div.fe_theme-hero {
     height: 26vh;
-  }
-  .front-page-gallery {
-    img {
-      max-width: 100%;
-    }
   }
 }
 
